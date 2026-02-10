@@ -3,7 +3,7 @@ from datetime import datetime
 from sqlalchemy.orm import relationship
 
 import enum
-from app.database import Base
+from app.core.database import Base
 
 
 class UserRole(str, enum.Enum):
@@ -21,7 +21,7 @@ class User(Base):
     role = Column(Enum(UserRole), default=UserRole.CUSTOMER, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
     
-    # Prevent fraudulent behavior - track order cancellations
+    # Prevent fraudulent behavior, for track order cancellations counts
     order_cancellation_count = Column(Integer, default=0)
     
     # Relationship

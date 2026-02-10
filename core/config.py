@@ -1,16 +1,30 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings
+
+from functools import lru_cache
+
 
 class Settings(BaseSettings):
-    DATABASE_URL: str
-    SECRET_KEY: str
+    # Database
+    DATABASE_URL: str = "sqlite:///./ecommerce.db"
+    
+    # JWT
+    SECRET_KEY: str = "your-secret-key-change-this-in-production"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
-    PROJECT_NAME: str = "Job Portal API"
+    
+    # App
+    APP_NAME: str = "Mini E-Commerce API"
+    DEBUG: bool = True
+    
+    class Config:
+        env_file = ".env"
 
-    model_config = SettingsConfigDict(
-        env_file=".env",
-        env_file_encoding="utf-8",
-        case_sensitive=True
-    )
+ # Caching the settings instance to avoid reloading on every access
+@lru_cache()
 
-settings = Settings()
+
+def get_settings():
+    return Settings()
+
+
+settings = get_settings()

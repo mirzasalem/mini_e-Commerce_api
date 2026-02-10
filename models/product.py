@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float, Text, DateTime
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from app.database import Base
+from app.core.database import Base
 
 
 class Product(Base):
@@ -14,6 +14,7 @@ class Product(Base):
     stock = Column(Integer, nullable=False, default=0)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    image = Column(String, nullable=True)
     
     # Relationships
     cart_items = relationship("CartItem", back_populates="product", cascade="all, delete-orphan")
