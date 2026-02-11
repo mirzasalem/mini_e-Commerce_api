@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List
-from app.core.database import get_db
-from app.schemas.order import OrderResponse, OrderStatusUpdate
-from app.models.order import Order, OrderItem, OrderStatus
-from app.models.cart import Cart, CartItem
-from app.models.product import Product
-from app.models.user import User, UserRole
-from app.core.dependencies import get_current_user, require_admin
+from core.database import get_db
+from schemas.order import OrderResponse, OrderStatusUpdate
+from models.order import Order, OrderItem, OrderStatus
+from models.cart import Cart, CartItem
+from models.product import Product
+from models.user import User, UserRole
+from core.dependencies import get_current_user, require_admin
 
 router = APIRouter()
 

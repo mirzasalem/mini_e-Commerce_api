@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import List
 from datetime import datetime
-from app.schemas.product import ProductResponse
+from schemas.product import ProductResponse
 
 
 class CartItemCreate(BaseModel):

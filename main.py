@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from app.core.database import engine
-from app.models import Base
+from core.database import engine
+from models import Base
 import os
-from app.routers import auth, products, cart, orders
+from routers import auth, products, cart, orders    
 from fastapi.staticfiles import StaticFiles
 app = FastAPI(
     title="Mini E-Commerce API",

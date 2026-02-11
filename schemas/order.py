@@ -1,8 +1,8 @@
 from pydantic import BaseModel
 from typing import List
 from datetime import datetime
-from app.models.order import OrderStatus
-from app.schemas.product import ProductResponse
+from models.order import OrderStatus
+from schemas.product import ProductResponse
 
 
  
