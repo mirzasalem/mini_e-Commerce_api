@@ -551,6 +551,4 @@ Represents individual products within an order.
 Mirza Salem  
 [GitHub](https://github.com/mirzasalem/) | [LinkedIn](https://www.linkedin.com/in/mirzasalem/) | [Portfolio](https://mirzasalem.vercel.app/)
 
-## 💼 About This Project
 
-Created as a portfolio E-Commerce project to demonstrate backend development skills for job applications.
