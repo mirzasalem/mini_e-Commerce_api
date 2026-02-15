@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     MAX_FILE_SIZE: int = 5242880  # 5MB in bytes
     
     class Config:
-        env_file = str(BASE_DIR / "app" / ".env")
+        env_file = str(BASE_DIR / "mini_e-Commerce_api" / ".env")
         env_file_encoding = "utf-8"
         case_sensitive = True
 
