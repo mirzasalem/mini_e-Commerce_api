@@ -36,7 +36,7 @@ def create_product(
     image_name = None
 
     if image:
-        IMAGE_PATH = "./app/static/products/"
+        IMAGE_PATH = "./static/products/"
         os.makedirs(IMAGE_PATH, exist_ok=True)
 
         extension = image.filename.split(".")[-1].lower()
